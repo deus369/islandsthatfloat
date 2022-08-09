@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Text: {fileID: 3977694}
-  m_WatchedInteractionInstigator: {fileID: 0}
+  m_WatchedInteractionInstigator: {fileID: 5393215579111688473}
 --- !u!222 &3977696
 CanvasRenderer:
   m_ObjectHideFlags: 0
