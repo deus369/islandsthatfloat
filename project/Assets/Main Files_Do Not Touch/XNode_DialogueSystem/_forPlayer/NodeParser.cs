@@ -17,6 +17,10 @@ public class NodeParser : MonoBehaviour
     public TextMeshProUGUI speaker;
     public TextMeshProUGUI dialogue; 
     public int g;
+    
+    //public GameObject[] ColliderTrigger;
+    //public int c; 
+    public Animator animFadeOut;
 
     public GameObject DialogueBox;
     public GameObject buttonPrefab;
@@ -63,6 +67,7 @@ public class NodeParser : MonoBehaviour
         else{
             Player.GetComponent<InteractionInstigator>().enabled = true;
             Player.GetComponent<FirstPersonController>().enabled = true;
+            //StartCoroutine(wait());
             DialogueBox.SetActive(false);
             NextNode("input"); 
             Debug.LogError("ERROR: ChoiceDialogue port is not connected");
@@ -146,17 +151,11 @@ public class NodeParser : MonoBehaviour
             yield return new WaitUntil(() => Input.GetMouseButtonDown(0)); //waits for left mouse click input then goes to next node
             yield return new WaitUntil(() => Input.GetMouseButtonUp(0));
             NextNode("exit");
-
-           
-          
-
-            
-          
-
         }
         if (dataParts[0] == "CloseDialogue_ExitNode"){
             Player.GetComponent<InteractionInstigator>().enabled = true;
             Player.GetComponent<FirstPersonController>().enabled = true;
+            //StartCoroutine(wait());
             DialogueBox.SetActive(false);
             graph[g].Start(); //loops back to the start node
             speaker.text ="";
@@ -185,9 +184,29 @@ public class NodeParser : MonoBehaviour
             DialogueBox.SetActive(true);
             NextNode("exit");
         }
+
+        if (dataParts[0] == "FadeDialogueNode"){ 
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.None;
+            speaker.text = dataParts[1];
+            dialogue.text = dataParts[2];
+            animFadeOut.SetBool("FadeOut", false);
+            /* yield return new WaitUntil(() => (DialogueBox.activeSelf)); 
+            yield return new WaitUntil(() => Input.GetMouseButtonDown(0)); 
+            yield return new WaitUntil(() => Input.GetMouseButtonUp(0)); */
+            yield return new WaitForSeconds(4);
+            animFadeOut.SetBool("FadeOut", true);
+            yield return new WaitForSeconds(1);
+            //speaker.text ="";
+            //dialogue.text = "";
+            //StartCoroutine(wait());
+            NextNode("exit");
+
+        }
     }
 
     public void NextNode(string fieldName){
+        animFadeOut.SetBool("FadeOut", false);
         speaker.text ="";
         dialogue.text = "";
         foreach (Transform child in buttonParent){
@@ -216,6 +235,12 @@ public class NodeParser : MonoBehaviour
             
         _parser = StartCoroutine(ParseNode());
         
+    }
+    
+     IEnumerator wait(){
+        //DialogueBox.SetActive(true);
+        //animFadeOut.SetBool("FadeOut", true);
+        yield return new WaitForSeconds(5f);
     }
 
 
