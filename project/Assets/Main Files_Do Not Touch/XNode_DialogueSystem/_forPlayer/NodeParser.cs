@@ -18,6 +18,7 @@ public class NodeParser : MonoBehaviour
     public TextMeshProUGUI dialogue; 
     public int g;
     
+    
     //public GameObject[] ColliderTrigger;
     //public int c; 
     public Animator animFadeOut;
@@ -28,6 +29,7 @@ public class NodeParser : MonoBehaviour
     public GameObject Player;
 
     public Transform buttonParent;
+    //public PassiveInteraction[] passiveInteraction_exitBool; 
     private string answer;
 
 
@@ -200,6 +202,18 @@ public class NodeParser : MonoBehaviour
             //speaker.text ="";
             //dialogue.text = "";
             //StartCoroutine(wait());
+            NextNode("exit");
+
+        }
+        if (dataParts[0] == "PassiveDialogueNode"){ 
+            //animFadeOut.SetBool("FadeOut", false);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            speaker.text = dataParts[1];
+            dialogue.text = dataParts[2];
+            yield return new WaitUntil(() => (DialogueBox.activeSelf));
+
+            //yield return new WaitForSeconds(1);
             NextNode("exit");
 
         }

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56b9b1e96b931e74c9120553962da057, type: 3}
-  m_Name: BoxCol1_DialogueGraph
+  m_Name: BoxCol3_DialogueGraph
   m_EditorClassIdentifier: 
   nodes:
   - {fileID: 5398391079699420998}
@@ -63,7 +63,7 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   speakerName: You
-  dialogueLine: What is this light?
+  dialogueLine: I can't go anywhere...
 --- !u!114 &5398391079699420998
 MonoBehaviour:
   m_ObjectHideFlags: 0
