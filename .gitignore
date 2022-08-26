@@ -10,6 +10,9 @@
 /project/[Ll]ogs/
 /project/[Mm]emoryCaptures/
 
+# ignore user settings
+/project/[Uu]serSettings/
+
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/project/[Aa]ssets/**/*.meta
 
