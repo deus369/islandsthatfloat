@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 74
+  controlID: 70
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -94,8 +94,8 @@ MonoBehaviour:
     y: 0
     width: 459.2
     height: 460
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 75
+  controlID: 71
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 76
+  controlID: 72
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -378,22 +378,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Philip/Scenes
+    - Assets/Philip
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Philip/Scenes
+  - Assets/Philip
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\pippy\OneDrive\Documents\GitHub\islandsthatfloat\project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 530.2}
-    m_SelectedIDs: 48a50000
-    m_LastClickedID: 42312
-    m_ExpandedIDs: 000000002aa100002ca100002ea1000030a1000032a1000034a1000036a1000038a100003aa1000040a1000048a5000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 5aa10000
+    m_LastClickedID: 41306
+    m_ExpandedIDs: 000000005ca100005ea1000060a1000062a1000064a1000066a1000068a100006aa100006ca1000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -421,7 +421,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000002aa100002ca100002ea1000030a1000032a1000034a1000036a1000038a100003aa10000
+    m_ExpandedIDs: 000000005aa100005ca100005ea1000060a1000062a1000064a1000066a1000068a100006aa100006ca10000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -513,7 +513,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 3.2000122
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
@@ -550,10 +550,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 302}
+      scrollPos: {x: 0, y: 96}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 6a0dffff6e0dffff760dffffd037ffffa465ffffc092ffff1c95ffffc895ffff5097ffff9ec5ffff42c7ffff18fbffff84ab0000
+      m_ExpandedIDs: fe64ffff0265ffff0a65ffff648fffffb2d0ffffb6d0ffffbed0ffff18fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -803,9 +803,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -22.884888, y: 19.753605, z: 43.578335}
+    m_Target: {x: -22.86779, y: 19.761309, z: 43.525265}
     speed: 2
-    m_Value: {x: -22.884888, y: 19.753605, z: 43.578335}
+    m_Value: {x: -22.86779, y: 19.761309, z: 43.525265}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -852,13 +852,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.20428559, y: 0.7873888, z: -0.3414588, w: 0.47094828}
+    m_Target: {x: 0.22156908, y: 0.3085097, z: -0.074136704, w: 0.92214787}
     speed: 2
-    m_Value: {x: 0.20356885, y: 0.7878607, z: -0.34026024, w: 0.47123054}
+    m_Value: {x: 0.2229382, y: 0.30837902, z: -0.07459486, w: 0.92175734}
   m_Size:
-    m_Target: 0.0029464576
+    m_Target: 0.050435025
     speed: 2
-    m_Value: 0.0029464576
+    m_Value: 0.04826318
   m_Ortho:
     m_Target: 0
     speed: 2
