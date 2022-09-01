@@ -10,6 +10,8 @@
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
 /[Uu]serSettings/
+/project/[Uu]serSettings/
+project/[Uu]serSettings/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
@@ -71,3 +73,9 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+project/UserSettings/Layouts/default-2021.dwlt
+project/UserSettings/Layouts/CurrentMaximizeLayout.dwlt
+
+/project/UserSettings/Layouts/default-2021.dwlt
+/project/UserSettings/Layouts/CurrentMaximizeLayout.dwlt
+
