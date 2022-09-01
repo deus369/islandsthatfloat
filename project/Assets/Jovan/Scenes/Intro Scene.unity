@@ -973,8 +973,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   col_Num: {fileID: 5393215579111688473}
   colliderNumber: 0
-  animFadeOut: {fileID: 1122219858}
-  ExitTriggerCollider: 0
 --- !u!114 &609256465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1182,8 +1180,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   col_Num: {fileID: 5393215579111688473}
   colliderNumber: 3
-  animFadeOut: {fileID: 1122219858}
-  ExitTriggerCollider: 0
 --- !u!114 &766165164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1432,8 +1428,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   col_Num: {fileID: 5393215579111688473}
   colliderNumber: 0
-  animFadeOut: {fileID: 1122219858}
-  ExitTriggerCollider: 0
 --- !u!114 &846617034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2231,8 +2225,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   col_Num: {fileID: 5393215579111688473}
   colliderNumber: 1
-  animFadeOut: {fileID: 1122219858}
-  ExitTriggerCollider: 0
 --- !u!114 &1184378654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2409,8 +2401,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   col_Num: {fileID: 5393215579111688473}
   colliderNumber: 2
-  animFadeOut: {fileID: 1122219858}
-  ExitTriggerCollider: 0
 --- !u!114 &1622025460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2583,8 +2573,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   col_Num: {fileID: 5393215579111688473}
   colliderNumber: 1
-  animFadeOut: {fileID: 1122219858}
-  ExitTriggerCollider: 0
 --- !u!114 &1718918296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3626,6 +3614,9 @@ MonoBehaviour:
   - {fileID: 766165162}
   c: 0
   animFadeOut: {fileID: 1122219858}
+  nodeParser: {fileID: 0}
+  g: 0
+  haltPassive_NearbyInteraction: []
 --- !u!114 &5393215579111688474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3653,6 +3644,7 @@ MonoBehaviour:
     type: 3}
   ButtonContainer: {fileID: 469029310}
   Player: {fileID: 5393215579111688472}
+  ColliderTrigger: {fileID: 0}
   buttonParent: {fileID: 469029311}
 --- !u!1001 &7288094137546172433
 PrefabInstance:
