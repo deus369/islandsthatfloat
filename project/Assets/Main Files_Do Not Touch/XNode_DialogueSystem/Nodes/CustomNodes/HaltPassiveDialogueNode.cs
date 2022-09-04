@@ -4,7 +4,7 @@ using UnityEngine;
 using XNode;
 
 // If you want to create a custom node, duplicate this and rename the class and the string. 
-public class PassiveDialogueNode : BaseNode{ //rename CustomNode here
+public class HaltPassiveDialogueNode : BaseNode{ //rename CustomNode here
 
     [Input] public Connection input;
     [Output] public Connection exit;
@@ -12,7 +12,7 @@ public class PassiveDialogueNode : BaseNode{ //rename CustomNode here
 	[TextArea] public string dialogueLine;
     public override string GetString()
     {
-        return "PassiveDialogueNode/" + speakerName + "/" + dialogueLine; 
+        return "HaltPassiveDialogueNode/" + speakerName + "/" + dialogueLine; 
     }
     public override object GetValue(NodePort port){
 		return null;

@@ -27,10 +27,12 @@ public class NodeParser : MonoBehaviour
     public GameObject buttonPrefab;
     public GameObject ButtonContainer;
     public GameObject Player;
+    public GameObject ColliderTrigger; 
 
     public Transform buttonParent;
     //public PassiveInteraction[] passiveInteraction_exitBool; 
     private string answer;
+    //public InteractionInstigator _halt;
 
 
     private ChoiceDialogueNode activeSegment;
@@ -155,21 +157,28 @@ public class NodeParser : MonoBehaviour
             NextNode("exit");
         }
         if (dataParts[0] == "CloseDialogue_ExitNode"){
+            //ColliderTrigger.GetComponent<BoxCollider>().enabled = false;
+            foreach (Transform child in buttonParent){
+                Destroy(child.gameObject);
+            }
+            print("close dialogue");
             Player.GetComponent<InteractionInstigator>().enabled = true;
             Player.GetComponent<FirstPersonController>().enabled = true;
+            //_halt.haltPassive_NearbyInteraction.Remove(haltPassive_Interaction); 
+             
             //StartCoroutine(wait());
             DialogueBox.SetActive(false);
             graph[g].Start(); //loops back to the start node
             speaker.text ="";
             dialogue.text = "";
-            foreach (Transform child in buttonParent){
-                Destroy(child.gameObject);
-            }
+            
         }
 
         if (dataParts[0] == "CloseDialogue_ExitNode_NoLoop_toStart"){ //the name is self explanatory 
             Player.GetComponent<InteractionInstigator>().enabled = true;
             Player.GetComponent<FirstPersonController>().enabled = true;
+             
+
             DialogueBox.SetActive(false);
             speaker.text ="";
             dialogue.text = "";
@@ -205,13 +214,17 @@ public class NodeParser : MonoBehaviour
             NextNode("exit");
 
         }
-        if (dataParts[0] == "PassiveDialogueNode"){ 
-            //animFadeOut.SetBool("FadeOut", false);
+        if (dataParts[0] == "HaltPassiveDialogueNode"){ 
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
             speaker.text = dataParts[1];
             dialogue.text = dataParts[2];
-            yield return new WaitUntil(() => (DialogueBox.activeSelf));
+            //Player.GetComponent<FirstPersonController>().enabled = false;
+            //ColliderTrigger[0].GetComponent<BoxCollider>().enabled = false; 
+            //yield return new WaitUntil(() => (DialogueBox.activeSelf));
+            yield return new WaitUntil(() => Input.GetMouseButtonDown(0)); //waits for left mouse click input then goes to next node
+            yield return new WaitUntil(() => Input.GetMouseButtonUp(0));
+            
 
             //yield return new WaitForSeconds(1);
             NextNode("exit");
