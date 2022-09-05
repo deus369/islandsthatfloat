@@ -4,18 +4,11 @@ using UnityEngine;
 
 public class SkyboxChange : MonoBehaviour
 {
-
-    public Material skyOne;
-    public Material skyTwo;
-    // Start is called before the first frame update
-    void Start()
-    {
-        RenderSettings.skybox = skyOne;
+    public Material skyBox;
+    void OnTriggerEnter(Collider other) {
+        if (other.CompareTag("Player")){
+            RenderSettings.skybox = skyBox;  
+        } 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
