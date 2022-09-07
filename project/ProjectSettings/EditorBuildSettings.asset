@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Jovan/Scenes/Intro Scene.unity
     guid: 9adcc6f648e54494ca44dfd878c56335
   - enabled: 1
-    path: Assets/Jovan/Scenes/Playground_Jovan.unity
-    guid: 5544b54d5d81e3d44899a6fd00945876
+    path: Assets/Jovan/Scenes/Playground_v2.unity
+    guid: d34dfb0ed274d8c429d27ebd092181ec
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7,
       type: 2}
