@@ -23,16 +23,6 @@ public class FadeManager : MonoBehaviour
         
      
     }
-    void Start(){
-        /* Scene scene = SceneManager.GetActiveScene();
-        //string sceneName = currentScene.name;
-        if (scene.name == "Playground 1") 
-        {
-            print("fade false");
-            Fade(false,1.25f);
-        }  */
-
-    }
 
 
     void OnEnable(){
@@ -56,16 +46,6 @@ public class FadeManager : MonoBehaviour
     
     
     void Update(){
-        if (Input.GetKey("a")){
-            //Fade(true,1.25f);
-
-        }
-
-        if (Input.GetKey("b")){
-            //Fade(false,1.25f);
-
-        }
-        
         if(!isIntransition){return;}
 
         transition += (isShowing) ? Time.deltaTime * (1/duration) : -Time.deltaTime * (1/duration);
@@ -82,18 +62,7 @@ public class FadeManager : MonoBehaviour
         
     }
 
-    /* void OnTriggerEnter(Collider other) {
-        if (other.CompareTag("Player")){
-            Fade(true,1.25f);
-            SceneManager.LoadScene(index);
-        } 
-    }
-    void OnTriggerExit(Collider other) {
-        if (other.CompareTag("Player")){
-            Fade(false,1.25f);
-        }
-        
-    } */
+
  
    
 }
