@@ -13,6 +13,9 @@ public class InteractionInstigator : MonoBehaviour{
     public GameObject[] ColliderTrigger; 
     public int c; 
     public Animator animFadeOut;
+    //public bool playerTrigger = false;
+    public NodeParser nodeParser;
+    public int g;
  
     
 
@@ -20,12 +23,16 @@ public class InteractionInstigator : MonoBehaviour{
     //public bool colTrig = true; 
     private List<Interactable> m_NearbyInteractables = new List<Interactable>();
     private List<PassiveInteraction> passive_NearbyInteraction = new List<PassiveInteraction>();
+    public List<HaltPassiveInteraction> haltPassive_NearbyInteraction = new List<HaltPassiveInteraction>();
 
     public bool HasNearbyInteractables(){
         return m_NearbyInteractables.Count != 0;
     }
     public bool passive_Interaction(){
         return passive_NearbyInteraction.Count != 0;
+    }
+    public bool passiveHalt_Interaction(){
+        return haltPassive_NearbyInteraction.Count != 0;
     }
     private void Start(){
         DialogueBox.SetActive(false);
@@ -43,11 +50,25 @@ public class InteractionInstigator : MonoBehaviour{
         if (passive_Interaction()){
             DialogueBox.SetActive(true);
             Player.GetComponent<InteractionInstigator>().enabled = false;
+            Cursor.visible = false;
             Player.GetComponent<NodeParser>().NextNode("exit");
+        }
+        if (passiveHalt_Interaction()){ //add something more here
+            DialogueBox.SetActive(true);
+            Player.GetComponent<InteractionInstigator>().enabled = false;
+            //Player.GetComponent<FirstPersonController>().enabled = false;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            
+            Player.GetComponent<NodeParser>().NextNode("exit");
+            //if(Input.GetMouseButtonDown(0)){Player.GetComponent<NodeParser>().NextNode("exit");}
+            
+
         }
     }
 
     public void OnTriggerEnter(Collider other){
+        //playerTrigger = true;
         Interactable interactable = other.GetComponent<Interactable>();
         if (interactable != null){
             m_NearbyInteractables.Add(interactable);    
@@ -56,10 +77,14 @@ public class InteractionInstigator : MonoBehaviour{
         PassiveInteraction p_interactable = other.GetComponent<PassiveInteraction>();
         if (p_interactable != null){
             passive_NearbyInteraction.Add(p_interactable); 
-            //animFadeOut.SetBool("FadeOut", false);
             ColliderTrigger[c].GetComponent<BoxCollider>().enabled = true;  
-            print("Collider Number: " + c);
-            //colTrig = true;          
+            //print("Collider Number: " + c);        
+        }
+        HaltPassiveInteraction haltPassive_Interaction = other.GetComponent<HaltPassiveInteraction>();
+        if (haltPassive_Interaction != null){
+            haltPassive_NearbyInteraction.Add(haltPassive_Interaction); 
+            //ColliderTrigger[c].GetComponent<BoxCollider>().enabled = false;  
+            //print("Collider Number: " + c);        
         }
     }
 
@@ -73,21 +98,26 @@ public class InteractionInstigator : MonoBehaviour{
 
         PassiveInteraction p_interactable = other.GetComponent<PassiveInteraction>();
         if (p_interactable != null){
-            //StartCoroutine(wait());
-            //DialogueBox.SetActive(false);
-
             passive_NearbyInteraction.Remove(p_interactable);  
             ColliderTrigger[c].GetComponent<BoxCollider>().enabled = false;  
             Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked; 
-            //StartCoroutine(wait());
-            //Player.GetComponent<NodeParser>().NextNode_Fade("exit");
-            //colTrig = false;      
+            Cursor.lockState = CursorLockMode.Locked;      
+        }
+        HaltPassiveInteraction haltPassive_Interaction = other.GetComponent<HaltPassiveInteraction>();
+        if (haltPassive_Interaction != null){
+            haltPassive_NearbyInteraction.Remove(haltPassive_Interaction); 
+            ColliderTrigger[c].GetComponent<BoxCollider>().enabled = false;
+            //nodeParser.g = g;
+            //nodeParser.DialogueBox.SetActive(false); 
+            //nodeParser.graph[g].Start(); //loops back to the start node
+            //nodeParser.speaker.text ="";
+            //nodeParser.dialogue.text = "";
+            //Player.GetComponent<FirstPersonController>().enabled = true;
+            //Player.GetComponent<InteractionInstigator>().enabled = true;
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;  
+            //print("Collider Number: " + c);        
         }
     }
-    IEnumerator wait(){
-        //DialogueBox.SetActive(true);
-        //animFadeOut.SetBool("FadeOut", true);
-        yield return new WaitForSeconds(5f);
-    }
+
 }

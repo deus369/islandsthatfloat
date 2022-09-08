@@ -88,7 +88,7 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  speakerName: 'NPC_0 '
+  speakerName: NPC_0 (Original)
   dialogueLine: 'Hi, I''m the first NPC clone. By the way, click to continue. '
 --- !u!114 &-5295879661426054465
 MonoBehaviour:
@@ -202,7 +202,7 @@ MonoBehaviour:
   - {fileID: 7548786468859092389}
   - {fileID: -5295879661426054465}
   start: {fileID: 5398391079699420998}
-  current: {fileID: 108078708666390029}
+  current: {fileID: -6323731576448002944}
   initNode: {fileID: 5398391079699420998}
 --- !u!114 &108078708666390029
 MonoBehaviour:
