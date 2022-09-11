@@ -24,9 +24,12 @@ public class InteractionInstigator : MonoBehaviour{
     private List<Interactable> m_NearbyInteractables = new List<Interactable>();
     private List<PassiveInteraction> passive_NearbyInteraction = new List<PassiveInteraction>();
     public List<HaltPassiveInteraction> haltPassive_NearbyInteraction = new List<HaltPassiveInteraction>();
-
+    public List<InteractOnce> interactingOnce = new List<InteractOnce>();
     public bool HasNearbyInteractables(){
         return m_NearbyInteractables.Count != 0;
+    }
+    public bool talk_once(){
+        return interactingOnce.Count != 0;
     }
     public bool passive_Interaction(){
         return passive_NearbyInteraction.Count != 0;
@@ -39,7 +42,15 @@ public class InteractionInstigator : MonoBehaviour{
     }
 
     private void Update(){
-        if (HasNearbyInteractables() && Input.GetButtonDown("Submit")){
+        if (HasNearbyInteractables() && Input.GetMouseButtonDown(0)){ //Input.GetButtonDown("Submit")
+            DialogueBox.SetActive(true);
+            Player.GetComponent<InteractionInstigator>().enabled = false;
+            Player.GetComponent<FirstPersonController>().enabled = false;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            Player.GetComponent<NodeParser>().NextNode("exit");  //makes sure that StartNode is not activated automatically    
+        }
+        if (talk_once() && Input.GetMouseButtonDown(0)){ //Input.GetButtonDown("Submit")
             DialogueBox.SetActive(true);
             Player.GetComponent<InteractionInstigator>().enabled = false;
             Player.GetComponent<FirstPersonController>().enabled = false;
@@ -68,7 +79,6 @@ public class InteractionInstigator : MonoBehaviour{
     }
 
     public void OnTriggerEnter(Collider other){
-        //playerTrigger = true;
         Interactable interactable = other.GetComponent<Interactable>();
         if (interactable != null){
             m_NearbyInteractables.Add(interactable);    
@@ -78,13 +88,17 @@ public class InteractionInstigator : MonoBehaviour{
         if (p_interactable != null){
             passive_NearbyInteraction.Add(p_interactable); 
             ColliderTrigger[c].GetComponent<BoxCollider>().enabled = true;  
-            //print("Collider Number: " + c);        
+               
+        }
+        InteractOnce o_interactingOnce = other.GetComponent<InteractOnce>();
+        if (o_interactingOnce != null){
+            interactingOnce.Add(o_interactingOnce); 
+                
         }
         HaltPassiveInteraction haltPassive_Interaction = other.GetComponent<HaltPassiveInteraction>();
         if (haltPassive_Interaction != null){
             haltPassive_NearbyInteraction.Add(haltPassive_Interaction); 
-            //ColliderTrigger[c].GetComponent<BoxCollider>().enabled = false;  
-            //print("Collider Number: " + c);        
+            
         }
     }
 
@@ -107,13 +121,6 @@ public class InteractionInstigator : MonoBehaviour{
         if (haltPassive_Interaction != null){
             haltPassive_NearbyInteraction.Remove(haltPassive_Interaction); 
             ColliderTrigger[c].GetComponent<BoxCollider>().enabled = false;
-            //nodeParser.g = g;
-            //nodeParser.DialogueBox.SetActive(false); 
-            //nodeParser.graph[g].Start(); //loops back to the start node
-            //nodeParser.speaker.text ="";
-            //nodeParser.dialogue.text = "";
-            //Player.GetComponent<FirstPersonController>().enabled = true;
-            //Player.GetComponent<InteractionInstigator>().enabled = true;
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;  
             //print("Collider Number: " + c);        

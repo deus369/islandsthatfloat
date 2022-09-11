@@ -16,4 +16,7 @@ public class BaseNode : Node {
 	public virtual string GetNodeType(){ 
 		return null;
 	}
+	/* public virtual GameObject GetOBJ(){
+		return null;
+	} */
 }
