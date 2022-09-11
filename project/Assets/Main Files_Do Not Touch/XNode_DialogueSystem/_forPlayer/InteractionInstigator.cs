@@ -93,7 +93,7 @@ public class InteractionInstigator : MonoBehaviour{
         InteractOnce o_interactingOnce = other.GetComponent<InteractOnce>();
         if (o_interactingOnce != null){
             interactingOnce.Add(o_interactingOnce); 
-                
+            ColliderTrigger[c].GetComponent<BoxCollider>().enabled = true;      
         }
         HaltPassiveInteraction haltPassive_Interaction = other.GetComponent<HaltPassiveInteraction>();
         if (haltPassive_Interaction != null){
@@ -109,7 +109,13 @@ public class InteractionInstigator : MonoBehaviour{
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
-
+        InteractOnce o_interactingOnce = other.GetComponent<InteractOnce>();
+        if (o_interactingOnce != null){
+            interactingOnce.Remove(o_interactingOnce); 
+            ColliderTrigger[c].GetComponent<BoxCollider>().enabled = false;  
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;    
+        }
         PassiveInteraction p_interactable = other.GetComponent<PassiveInteraction>();
         if (p_interactable != null){
             passive_NearbyInteraction.Remove(p_interactable);  

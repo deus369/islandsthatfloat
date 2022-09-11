@@ -11,5 +11,6 @@ public class UIInteractionTextController : MonoBehaviour
         
         //This is overkill it could be handled with events.
         m_Text.enabled = m_WatchedInteractionInstigator.enabled && m_WatchedInteractionInstigator.HasNearbyInteractables();
+        m_Text.enabled = m_WatchedInteractionInstigator.enabled && m_WatchedInteractionInstigator.talk_once();
     }
 }

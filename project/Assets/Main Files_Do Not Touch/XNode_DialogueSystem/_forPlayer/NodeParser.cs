@@ -235,8 +235,8 @@ public class NodeParser : MonoBehaviour
 
         }
          if (dataParts[0] == "testNode"){
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked; 
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             //speaker.text = dataParts[1];
             //dialogue.text = dataParts[2];
             //prop_model = b.GetOBJ();

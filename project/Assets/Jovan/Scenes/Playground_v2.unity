@@ -185,7 +185,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press Enter to interact
+  m_text: Click to Interact
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7533,18 +7533,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   graphNumber: 1
---- !u!114 &1850223230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1850223224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d2c6473a185a744fbada757c0d2bb3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1850223231
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7558,6 +7546,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.151143, y: 3.2145445, z: 8.143934}
   m_Center: {x: -0.002165559, y: 0, z: 0.44815388}
+--- !u!114 &1850223235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850223224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58e27d3c47b6a2d4d9ffae605f28593a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 5393215579111688472}
+  col_Num: {fileID: 5393215579111688473}
+  colliderNumber: 2
 --- !u!1001 &1925117465
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8996,11 +8999,13 @@ MonoBehaviour:
   ColliderTrigger:
   - {fileID: 915797113}
   - {fileID: 1673295352}
+  - {fileID: 1850223224}
   c: 0
   animFadeOut: {fileID: 1122219857}
   nodeParser: {fileID: 0}
   g: 0
   haltPassive_NearbyInteraction: []
+  interactingOnce: []
 --- !u!114 &5393215579111688474
 MonoBehaviour:
   m_ObjectHideFlags: 0
