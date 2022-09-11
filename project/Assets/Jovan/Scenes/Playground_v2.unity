@@ -7224,13 +7224,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1673295352}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67dce4b619c2ffb4b99a6c5caa6dd216, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d2c6473a185a744fbada757c0d2bb3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 5393215579111688472}
-  stopMoving: 1
-  col_Num: {fileID: 5393215579111688473}
-  colliderNumber: 0
 --- !u!1001 &1735391229
 PrefabInstance:
   m_ObjectHideFlags: 0
