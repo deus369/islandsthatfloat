@@ -37,10 +37,12 @@ public class NodeParser : MonoBehaviour
 
     private ChoiceDialogueNode activeSegment;
     Coroutine _parser;
+    public GameObject prop_model;
     
     //public Image speakerImage;
 
     void Start(){ 
+        //prop_model.SetActive(false);
         try{
             foreach (BaseNode b in graph[g].nodes){  
                 if (b.GetString() == "Start"){ //"b" is a reference to whatever node it's found next. It's an enumerator variable 
@@ -143,6 +145,7 @@ public class NodeParser : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             speaker.text = dataParts[1];
             dialogue.text = dataParts[2];
+            
 
             if(speaker.text == ""){
                 Debug.LogError("ERROR: Speaker text for DialogueNode is empty");
@@ -154,6 +157,7 @@ public class NodeParser : MonoBehaviour
             yield return new WaitUntil(() => (DialogueBox.activeSelf)); 
             yield return new WaitUntil(() => Input.GetMouseButtonDown(0)); //waits for left mouse click input then goes to next node
             yield return new WaitUntil(() => Input.GetMouseButtonUp(0));
+            //prop_model.SetActive(false);
             NextNode("exit");
         }
         if (dataParts[0] == "CloseDialogue_ExitNode"){
@@ -230,6 +234,26 @@ public class NodeParser : MonoBehaviour
             NextNode("exit");
 
         }
+         if (dataParts[0] == "testNode"){
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            //speaker.text = dataParts[1];
+            //dialogue.text = dataParts[2];
+            //prop_model = b.GetOBJ();
+            //prop_model.SetActive(false);
+            prop_model.GetComponent<MeshRenderer>().enabled = false;
+            prop_model.GetComponent<MeshCollider>().enabled = false;
+            //prop_model.GetComponent<BoxCollider>().enabled = false;
+            //yield return new WaitUntil(() => Input.GetMouseButtonDown(0)); //waits for left mouse click input then goes to next node
+            //yield return new WaitUntil(() => Input.GetMouseButtonUp(0));
+            print("test node");
+            NextNode("exit");
+            //prop_model.SetActive(false);
+            //yield return new WaitUntil(() => Input.GetMouseButtonDown(0)); 
+            //yield return new WaitUntil(() => Input.GetMouseButtonUp(0));
+            
+
+         } 
     }
 
     public void NextNode(string fieldName){

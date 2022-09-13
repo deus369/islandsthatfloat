@@ -25,7 +25,7 @@ MonoBehaviour:
         PublicKeyToken=null
       connections:
       - fieldName: exit
-        node: {fileID: -2620841728075851472}
+        node: {fileID: 5398391079699420998}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Name: Halt Passive Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 120, y: 24}
+  position: {x: 104, y: 88}
   ports:
     keys:
     - input
@@ -161,10 +161,7 @@ MonoBehaviour:
       _node: {fileID: -2620841728075851472}
       _typeQualifiedName: Connection, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-      connections:
-      - fieldName: exit
-        node: {fileID: 5398391079699420998}
-        reroutePoints: []
+      connections: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
@@ -173,10 +170,7 @@ MonoBehaviour:
       _node: {fileID: -2620841728075851472}
       _typeQualifiedName: Connection, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-      connections:
-      - fieldName: input
-        node: {fileID: -8384879215147036587}
-        reroutePoints: []
+      connections: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
@@ -205,7 +199,7 @@ MonoBehaviour:
   - {fileID: -5295879661426054465}
   - {fileID: -2620841728075851472}
   start: {fileID: 5398391079699420998}
-  current: {fileID: -2620841728075851472}
+  current: {fileID: 108078708666390029}
   initNode: {fileID: 5398391079699420998}
 --- !u!114 &108078708666390029
 MonoBehaviour:
@@ -303,7 +297,7 @@ MonoBehaviour:
         PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: -2620841728075851472}
+        node: {fileID: -8384879215147036587}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
