@@ -10,12 +10,14 @@ public class InteractionInstigator : MonoBehaviour{
 
     public GameObject DialogueBox;
     public GameObject Player;
-    public GameObject[] ColliderTrigger; 
+    public GameObject[] prop_model;
+    public GameObject[] ColliderTrigger; //disables collider after interaction 
     public int c; 
-    public Animator animFadeOut;
+    public int p;
+    //public Animator animFadeOut;
     //public bool playerTrigger = false;
-    public NodeParser nodeParser;
-    public int g;
+    //public NodeParser nodeParser;
+    //public int g;
  
     
 
@@ -23,8 +25,8 @@ public class InteractionInstigator : MonoBehaviour{
     //public bool colTrig = true; 
     private List<Interactable> m_NearbyInteractables = new List<Interactable>();
     private List<PassiveInteraction> passive_NearbyInteraction = new List<PassiveInteraction>();
-    public List<HaltPassiveInteraction> haltPassive_NearbyInteraction = new List<HaltPassiveInteraction>();
-    public List<InteractOnce> interactingOnce = new List<InteractOnce>();
+    private List<HaltPassiveInteraction> haltPassive_NearbyInteraction = new List<HaltPassiveInteraction>();
+    private List<InteractOnce> interactingOnce = new List<InteractOnce>();
     public bool HasNearbyInteractables(){
         return m_NearbyInteractables.Count != 0;
     }
@@ -112,7 +114,9 @@ public class InteractionInstigator : MonoBehaviour{
         InteractOnce o_interactingOnce = other.GetComponent<InteractOnce>();
         if (o_interactingOnce != null){
             interactingOnce.Remove(o_interactingOnce); 
-            ColliderTrigger[c].GetComponent<BoxCollider>().enabled = false;  
+            if (prop_model[p].GetComponent<MeshRenderer>().enabled == false){ //Disables collider trigger if mesh renderer is disabled. It's in effect after leaving collider trigger
+                ColliderTrigger[c].GetComponent<BoxCollider>().enabled = false;
+                }
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;    
         }
