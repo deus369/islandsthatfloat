@@ -42,6 +42,8 @@ public class NodeParser : MonoBehaviour
     //public Image speakerImage;
 
     void Start(){ 
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         //prop_model.SetActive(false);
         try{
             foreach (BaseNode b in graph[g].nodes){  
@@ -58,6 +60,10 @@ public class NodeParser : MonoBehaviour
     
     }
     void Update(){
+         if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
         //print("Graph Number:" + g);
     }
     
