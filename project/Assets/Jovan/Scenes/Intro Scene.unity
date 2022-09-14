@@ -3622,6 +3622,7 @@ MonoBehaviour:
   nodeParser: {fileID: 0}
   g: 0
   haltPassive_NearbyInteraction: []
+  interactingOnce: []
 --- !u!114 &5393215579111688474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3651,6 +3652,7 @@ MonoBehaviour:
   Player: {fileID: 5393215579111688472}
   ColliderTrigger: {fileID: 0}
   buttonParent: {fileID: 469029311}
+  prop_model: {fileID: 0}
 --- !u!1001 &7288094137546172433
 PrefabInstance:
   m_ObjectHideFlags: 0
