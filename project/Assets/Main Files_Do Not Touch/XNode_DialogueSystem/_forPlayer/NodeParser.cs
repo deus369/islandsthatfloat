@@ -13,10 +13,14 @@ using UnityEngine.Events;
 public class NodeParser : MonoBehaviour
 {
 
-    public DialogueGraph[] graph; 
+    
     public TextMeshProUGUI speaker;
     public TextMeshProUGUI dialogue; 
+    public DialogueGraph[] graph; 
     public int g;
+    public GameObject[] prop_model_true;
+    public GameObject[] prop_model_false;
+    public int p; 
     
     
     //public GameObject[] ColliderTrigger;
@@ -27,7 +31,7 @@ public class NodeParser : MonoBehaviour
     public GameObject buttonPrefab;
     public GameObject ButtonContainer;
     public GameObject Player;
-    public GameObject ColliderTrigger; 
+    //public GameObject ColliderTrigger; 
 
     public Transform buttonParent;
     //public PassiveInteraction[] passiveInteraction_exitBool; 
@@ -37,11 +41,13 @@ public class NodeParser : MonoBehaviour
 
     private ChoiceDialogueNode activeSegment;
     Coroutine _parser;
-    public GameObject prop_model;
+    
     
     //public Image speakerImage;
 
     void Start(){ 
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         //prop_model.SetActive(false);
         try{
             foreach (BaseNode b in graph[g].nodes){  
@@ -58,6 +64,10 @@ public class NodeParser : MonoBehaviour
     
     }
     void Update(){
+         if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
         //print("Graph Number:" + g);
     }
     
@@ -241,8 +251,13 @@ public class NodeParser : MonoBehaviour
             //dialogue.text = dataParts[2];
             //prop_model = b.GetOBJ();
             //prop_model.SetActive(false);
-            prop_model.GetComponent<MeshRenderer>().enabled = false;
-            prop_model.GetComponent<MeshCollider>().enabled = false;
+            //prop_model_false[p].SetActive(false);
+            //prop_model_true[p].SetActive(true);
+            prop_model_false[p].GetComponent<MeshRenderer>().enabled = false;
+            prop_model_false[p].GetComponent<MeshCollider>().enabled = false;
+            prop_model_true[p].GetComponent<MeshRenderer>().enabled = true;
+            prop_model_true[p].GetComponent<MeshCollider>().enabled = true;
+            //yield return new WaitForSeconds(3);
             //prop_model.GetComponent<BoxCollider>().enabled = false;
             //yield return new WaitUntil(() => Input.GetMouseButtonDown(0)); //waits for left mouse click input then goes to next node
             //yield return new WaitUntil(() => Input.GetMouseButtonUp(0));

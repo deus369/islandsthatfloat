@@ -7,16 +7,19 @@ using StarterAssets;
 
 public class InteractOnce : MonoBehaviour
 {
-    public GameObject Player;
     private UnityEvent interactingOnce;
     public void interacted_once(){
         interactingOnce.Invoke();
     }
-    public InteractionInstigator col_Num;
+    public InteractionInstigator interactionInstigator;
+    public NodeParser nodeParser;
     public int colliderNumber; 
+    public int propNumber;
     private void OnTriggerEnter(Collider col){
         if(col.gameObject.tag == "Player"){
-            col_Num.c = colliderNumber;     
+            interactionInstigator.c = colliderNumber; //disables collider after interaction
+            interactionInstigator.p = propNumber;   
+            nodeParser.p = propNumber;  
         }
     }
 
