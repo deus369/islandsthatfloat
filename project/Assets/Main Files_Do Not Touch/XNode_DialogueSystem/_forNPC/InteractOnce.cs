@@ -17,7 +17,8 @@ public class InteractOnce : MonoBehaviour
     public int propNumber;
     private void OnTriggerEnter(Collider col){
         if(col.gameObject.tag == "Player"){
-            interactionInstigator.c = colliderNumber; //disables collider after interaction  
+            interactionInstigator.c = colliderNumber; //disables collider after interaction
+            interactionInstigator.p = propNumber;   
             nodeParser.p = propNumber;  
         }
     }
