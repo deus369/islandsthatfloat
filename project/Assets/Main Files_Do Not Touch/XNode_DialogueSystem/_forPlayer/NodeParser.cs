@@ -251,6 +251,8 @@ public class NodeParser : MonoBehaviour
             //dialogue.text = dataParts[2];
             //prop_model = b.GetOBJ();
             //prop_model.SetActive(false);
+            //prop_model_false[p].SetActive(false);
+            //prop_model_true[p].SetActive(true);
             prop_model_false[p].GetComponent<MeshRenderer>().enabled = false;
             prop_model_false[p].GetComponent<MeshCollider>().enabled = false;
             prop_model_true[p].GetComponent<MeshRenderer>().enabled = true;

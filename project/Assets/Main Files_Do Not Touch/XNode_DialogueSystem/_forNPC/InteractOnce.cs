@@ -11,13 +11,15 @@ public class InteractOnce : MonoBehaviour
     public void interacted_once(){
         interactingOnce.Invoke();
     }
-    public InteractionInstigator INTG;
+    public InteractionInstigator interactionInstigator;
+    public NodeParser nodeParser;
     public int colliderNumber; 
     public int propNumber;
     private void OnTriggerEnter(Collider col){
         if(col.gameObject.tag == "Player"){
-            INTG.c = colliderNumber; //disables collider after interaction  
-            INTG.p = propNumber;  
+            interactionInstigator.c = colliderNumber; //disables collider after interaction
+            interactionInstigator.p = propNumber;   
+            nodeParser.p = propNumber;  
         }
     }
 
