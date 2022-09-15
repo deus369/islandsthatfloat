@@ -17,7 +17,7 @@ MonoBehaviour:
   - {fileID: 7074395268130795414}
   - {fileID: 724983561780985627}
   start: {fileID: 5398391079699420998}
-  current: {fileID: 724983561780985627}
+  current: {fileID: 5398391079699420998}
   initNode: {fileID: 5398391079699420998}
 --- !u!114 &724983561780985627
 MonoBehaviour:
@@ -63,7 +63,7 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   speakerName: You
-  dialogueLine: Wait... This playground...
+  dialogueLine: 'A playground? Was I here before? '
 --- !u!114 &5398391079699420998
 MonoBehaviour:
   m_ObjectHideFlags: 0
