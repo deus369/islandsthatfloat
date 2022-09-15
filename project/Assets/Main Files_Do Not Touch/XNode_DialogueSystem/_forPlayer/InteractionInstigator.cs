@@ -116,7 +116,7 @@ public class InteractionInstigator : MonoBehaviour{
             interactingOnce.Remove(o_interactingOnce); 
             if (prop_model[p].GetComponent<MeshRenderer>().enabled == false){ //Disables collider trigger if mesh renderer is disabled. It's in effect after leaving collider trigger
                 ColliderTrigger[c].GetComponent<BoxCollider>().enabled = false;
-                }
+            }
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;    
         }
