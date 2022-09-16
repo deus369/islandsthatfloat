@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: b5bfda004d9611149b2f9fd8d7546c7a
+guid: bf55b6d3ae1850645aea91c8e0fb413a
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: bench1
-    second: {fileID: 2100000, guid: 9d4777ab2e4b8eb40961d9f66ceec3f9, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

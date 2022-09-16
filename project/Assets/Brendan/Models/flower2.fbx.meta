@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b5bfda004d9611149b2f9fd8d7546c7a
+guid: fccd091eab5cce24aa9313d1cd26c693
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: bench1
-    second: {fileID: 2100000, guid: 9d4777ab2e4b8eb40961d9f66ceec3f9, type: 2}
+      name: flower1
+    second: {fileID: 2100000, guid: 6a41f5e02c8082a4c921e8476359ed7c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 6a41f5e02c8082a4c921e8476359ed7c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
