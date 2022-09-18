@@ -29,6 +29,7 @@ public class NodeParser : MonoBehaviour
 
     public GameObject DialogueBox;
     public GameObject buttonPrefab;
+
     public GameObject ButtonContainer;
     public GameObject Player;
     //public GameObject ColliderTrigger; 
@@ -37,6 +38,7 @@ public class NodeParser : MonoBehaviour
     //public PassiveInteraction[] passiveInteraction_exitBool; 
     private string answer;
     //public InteractionInstigator _halt;
+
 
 
     private ChoiceDialogueNode activeSegment;
@@ -141,7 +143,6 @@ public class NodeParser : MonoBehaviour
             dialogue.text = dataParts[2];
 
             UpdateDialogue(b as ChoiceDialogueNode); //Instantiates the buttons 
-
             if(speaker.text == ""){
                 Debug.LogError("ERROR: Speaker text for ChoiceDialogueNode is empty");
             }
@@ -156,7 +157,6 @@ public class NodeParser : MonoBehaviour
             speaker.text = dataParts[1];
             dialogue.text = dataParts[2];
             
-
             if(speaker.text == ""){
                 Debug.LogError("ERROR: Speaker text for DialogueNode is empty");
             }
@@ -179,7 +179,6 @@ public class NodeParser : MonoBehaviour
             Player.GetComponent<InteractionInstigator>().enabled = true;
             Player.GetComponent<FirstPersonController>().enabled = true;
             //_halt.haltPassive_NearbyInteraction.Remove(haltPassive_Interaction); 
-             
             //StartCoroutine(wait());
             DialogueBox.SetActive(false);
             graph[g].Start(); //loops back to the start node
