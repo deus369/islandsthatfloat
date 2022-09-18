@@ -12,6 +12,7 @@ public class InteractionInstigator : MonoBehaviour{
     public GameObject Player;
     public GameObject[] prop_model;
     public GameObject[] ColliderTrigger; //disables collider after interaction 
+   
     public int c; 
     public int p;
     //public Animator animFadeOut;
