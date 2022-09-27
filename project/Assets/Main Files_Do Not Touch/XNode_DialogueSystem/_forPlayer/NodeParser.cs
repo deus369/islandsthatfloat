@@ -20,6 +20,7 @@ public class NodeParser : MonoBehaviour
     public int g;
     public GameObject[] prop_model_true;
     public GameObject[] prop_model_false;
+
     public int p; 
     
     
@@ -242,6 +243,14 @@ public class NodeParser : MonoBehaviour
             //yield return new WaitForSeconds(1);
             NextNode("exit");
 
+        }
+        if (dataParts[0] == "AnimationNode"){
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            
+
+            NextNode("exit");
+            
         }
          if (dataParts[0] == "testNode"){
             Cursor.visible = true;
