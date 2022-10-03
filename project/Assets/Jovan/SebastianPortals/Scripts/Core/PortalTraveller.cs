@@ -31,6 +31,7 @@ public class PortalTraveller : MonoBehaviour {
     // Called once no longer touching portal (excluding when teleporting)
     public virtual void ExitPortalThreshold () {
         graphicsClone.SetActive (false);
+        Destroy(graphicsClone); //added this line because the portal sometimes bugged out
         // Disable slicing
         for (int i = 0; i < originalMaterials.Length; i++) {
             originalMaterials[i].SetVector ("sliceNormal", Vector3.zero);
