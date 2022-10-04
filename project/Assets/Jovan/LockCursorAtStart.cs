@@ -15,7 +15,7 @@ public class LockCursorAtStart : MonoBehaviour
         if (hasFocus)
         {
             Cursor.lockState = CursorLockMode.Locked;
-            Debug.Log("Application is focussed");
+            Debug.Log("Application is focused");
         }
         else
         {
