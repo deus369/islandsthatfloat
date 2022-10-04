@@ -50,6 +50,9 @@ namespace StarterAssets
 		public float TopClamp = 90.0f;
 		[Tooltip("How far in degrees can you move the camera down")]
 		public float BottomClamp = -90.0f;
+		public float yaw;
+		float smoothYaw;
+		Vector3 velocity;
 
 		// cinemachine
 		private float _cinemachineTargetPitch;
@@ -116,11 +119,22 @@ namespace StarterAssets
 			GroundedCheck();
 			Move();
 		}
+		
 
 		private void LateUpdate()
 		{
 			CameraRotation();
 		}
+		public override void Teleport (Transform fromPortal, Transform toPortal, Vector3 pos, Quaternion rot) {
+        	transform.position = pos;
+        	Vector3 eulerRot = rot.eulerAngles;
+        	float delta = Mathf.DeltaAngle (smoothYaw, eulerRot.y);
+        	yaw += delta;
+        	smoothYaw += delta;
+        	transform.eulerAngles = Vector3.up * smoothYaw;
+        	velocity = toPortal.TransformVector (fromPortal.InverseTransformVector (velocity));
+        	Physics.SyncTransforms ();
+    	}
 
 		private void GroundedCheck()
 		{
