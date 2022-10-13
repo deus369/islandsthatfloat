@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 721a3371e1abfb441866e77449e34303
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_ViewDataDictionary: {instanceID: 0}
+  - panelPrefab: {fileID: 6456572745637612774, guid: 2ef53940ef91fd44782f4d0c0aa791da, type: 3}
+  - buttonPrefab: {fileID: 5902187718486389544, guid: 1c4185f30041473488728c5153b0bd6f, type: 3}
+  - sliderPrefab: {fileID: 572408092218241850, guid: 09551e844f4cd9d49848cd8901919c02, type: 3}
+  - textFontAsset: {instanceID: 0}
+  - headerFontAsset: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
