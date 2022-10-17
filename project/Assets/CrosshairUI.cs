@@ -17,6 +17,7 @@ public class CrosshairUI : MonoBehaviour
 
     public void ResetCrosshairColor()
     {
+        Debug.Log("Resetting Crosshair.");
         crosshairImage.color = originalColor;
     }
 
@@ -26,6 +27,7 @@ public class CrosshairUI : MonoBehaviour
         {
             return;
         }
+        Debug.Log("Setting Crosshair color [" + color + "].");
         crosshairImage.color = color;
     }
 }

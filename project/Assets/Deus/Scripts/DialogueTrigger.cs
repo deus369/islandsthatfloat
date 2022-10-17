@@ -18,6 +18,32 @@ public class DialogueTrigger : MonoBehaviour
         if(playerObject.tag == "Player")
         {
             Trigger(playerObject, InteractType.TriggerCollider);
+            //! Add this interactable to player nearby interactables.
+            if (interactType == InteractType.TriggerEnterClick)
+            {
+                var playerTriggerer = playerObject.GetComponent<PlayerTriggerer>();
+                if (playerTriggerer)
+                {
+                    playerTriggerer.AddInteractable(gameObject, this);
+                }
+            }
+        }
+    }
+    
+    private void OnTriggerExit(Collider collider)
+    {
+        GameObject playerObject = collider.gameObject;
+        if(playerObject.tag == "Player")
+        {
+            //! Remove this interactable to player nearby interactables.
+            if (interactType == InteractType.TriggerEnterClick)
+            {
+                var playerTriggerer = playerObject.GetComponent<PlayerTriggerer>();
+                if (playerTriggerer)
+                {
+                    playerTriggerer.RemoveInteractable(gameObject);
+                }
+            }
         }
     }
 
@@ -29,10 +55,20 @@ public class DialogueTrigger : MonoBehaviour
     //! returns true if triggered properly.
     public void Trigger(GameObject triggerer, InteractType triggerType)
     {
-        if (!CanTrigger(triggerType))
+        if (CanTrigger(triggerType))
         {
-            return;
+            //! I need sleep fml.
+            GenericTriggerFunction(triggerer);
         }
+    }
+
+    public void TriggerFromTriggerer(GameObject triggerer)
+    {
+        GenericTriggerFunction(triggerer);
+    }
+
+    private void GenericTriggerFunction(GameObject triggerer)
+    {
         interactionCount++;
         if (interactionCount == 1)
         {

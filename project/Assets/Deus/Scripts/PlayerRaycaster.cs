@@ -13,7 +13,7 @@ public class PlayerRaycaster : MonoBehaviour
     {
         var didRaycastThing = false;
         var mouseButtonDown = Input.GetMouseButtonDown(0);
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = Camera.main.ScreenPointToRay(new Vector2(Screen.width, Screen.height) / 2f); // Input.mousePosition);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, maxRaycast))
         {
@@ -32,6 +32,8 @@ public class PlayerRaycaster : MonoBehaviour
                             isRaycastingThing = true;
                             if (onRaycastThing != null)
                             {
+                                Debug.DrawRay(ray.origin, hit.point, Color.red, 2);
+                                UnityEngine.Debug.Log("Raycasted Interactable: " + hitTransform.gameObject.name);
                                 onRaycastThing.Invoke(dialogueTrigger.interactColor);
                             }
                         }
