@@ -8,6 +8,10 @@ using UnityEngine.Events;
 using System.Collections;
 using System.Collections.Generic;
 
+//! Handles dialogue logic.
+/**
+*   ADD TO DIALOGUEUI
+*/
 public class NodeUpdater : MonoBehaviour
 {
     public static NodeUpdater instance;
@@ -28,6 +32,11 @@ public class NodeUpdater : MonoBehaviour
     void Awake()
     {
         NodeUpdater.instance = this;
+    }
+
+    public bool IsBusy()
+    {
+        return player != null;
     }
 
     //! Starts the dialogue system
@@ -56,6 +65,7 @@ public class NodeUpdater : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         player.GetComponent<FirstPersonController>().enabled = true;
+        player = null;
     }
 
     public void SetNode(string nextNodeName)

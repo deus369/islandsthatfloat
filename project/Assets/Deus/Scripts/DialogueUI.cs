@@ -3,6 +3,9 @@ using UnityEngine.UI;
 using TMPro;
 
 //! Seperate out UI parts from dialogue logic.
+/**
+*   ADD TO DIALOGUEUI
+*/
 public class DialogueUI : MonoBehaviour
 {
     [Header("UI Scene")]

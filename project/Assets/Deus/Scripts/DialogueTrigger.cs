@@ -3,12 +3,16 @@ using UnityEngine.Events;
 using StarterAssets;
 
 //! Add this to npcs for interaction when close.
+/**
+*   ADD TO INTERACTABLE
+*/
 public class DialogueTrigger : MonoBehaviour
 {
     public InteractType interactType;
     public DialogueGraph dialogueGraph;
     public UnityEvent<GameObject> onFirstInteract;
     public UnityEvent<GameObject> onInteract;
+    // public UnityEvent onInteractEnd;
     public Color interactColor;
     private int interactionCount;
     
