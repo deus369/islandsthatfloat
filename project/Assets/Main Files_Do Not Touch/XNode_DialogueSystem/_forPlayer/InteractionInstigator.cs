@@ -12,6 +12,7 @@ public class InteractionInstigator : MonoBehaviour{
     public GameObject Player;
     public GameObject[] prop_model;
     public GameObject[] ColliderTrigger; //disables collider after interaction 
+    public GameObject mouseUI;
    
     public int c; 
     public int p;
@@ -42,10 +43,12 @@ public class InteractionInstigator : MonoBehaviour{
     }
     private void Start(){
         DialogueBox.SetActive(false);
+        mouseUI.SetActive(false);
     }
 
     private void Update(){
-        if (HasNearbyInteractables() && Input.GetMouseButtonDown(0)){ //Input.GetButtonDown("Submit")
+        if (HasNearbyInteractables() && Input.GetMouseButtonDown(0)){
+        
             DialogueBox.SetActive(true);
             Player.GetComponent<InteractionInstigator>().enabled = false;
             Player.GetComponent<FirstPersonController>().enabled = false;
@@ -82,6 +85,7 @@ public class InteractionInstigator : MonoBehaviour{
     }
 
     public void OnTriggerEnter(Collider other){
+        //mouseUI.SetActive(true);
         Interactable interactable = other.GetComponent<Interactable>();
         if (interactable != null){
             m_NearbyInteractables.Add(interactable);    
@@ -106,6 +110,7 @@ public class InteractionInstigator : MonoBehaviour{
     }
 
     public void OnTriggerExit(Collider other){
+        //mouseUI.SetActive(false);
         Interactable interactable = other.GetComponent<Interactable>();
         if (interactable != null){
             m_NearbyInteractables.Remove(interactable);
