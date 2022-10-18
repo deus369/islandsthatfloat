@@ -91,7 +91,7 @@ MonoBehaviour:
   - {fileID: 1011489125581489326}
   - {fileID: -2717716424430411486}
   start: {fileID: -2956919964551183772}
-  current: {fileID: -2956919964551183772}
+  current: {fileID: 1011489125581489326}
   initNode: {fileID: -2956919964551183772}
 --- !u!114 &1011489125581489326
 MonoBehaviour:

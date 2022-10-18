@@ -277,7 +277,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c01ff76d346b13a4f8ba94ad14a088de,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c01ff76d346b13a4f8ba94ad14a088de, type: 3}
@@ -2704,7 +2704,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c01ff76d346b13a4f8ba94ad14a088de,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c01ff76d346b13a4f8ba94ad14a088de, type: 3}
@@ -7115,7 +7115,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1122219851}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f33ac9f8dbaf3f6da6b98634fcef7c1, type: 3}
+  m_Script: {fileID: 11500000, guid: a566f391ea18d9347b641b59888e20c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animFadeOut: {fileID: 1122219857}
@@ -7123,7 +7123,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1122219860}
-        m_TargetAssemblyTypeName: DialogueUI, Assembly-CSharp
+        m_TargetAssemblyTypeName: _DialogueUI, Assembly-CSharp
         m_MethodName: Show
         m_Mode: 1
         m_Arguments:
@@ -7138,7 +7138,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1122219860}
-        m_TargetAssemblyTypeName: DialogueUI, Assembly-CSharp
+        m_TargetAssemblyTypeName: _DialogueUI, Assembly-CSharp
         m_MethodName: Hide
         m_Mode: 1
         m_Arguments:
@@ -7153,7 +7153,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1122219860}
-        m_TargetAssemblyTypeName: DialogueUI, Assembly-CSharp
+        m_TargetAssemblyTypeName: _DialogueUI, Assembly-CSharp
         m_MethodName: Clear
         m_Mode: 1
         m_Arguments:
@@ -7168,7 +7168,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1122219860}
-        m_TargetAssemblyTypeName: DialogueUI, Assembly-CSharp
+        m_TargetAssemblyTypeName: _DialogueUI, Assembly-CSharp
         m_MethodName: SetDialogueText
         m_Mode: 0
         m_Arguments:
@@ -7183,7 +7183,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1122219860}
-        m_TargetAssemblyTypeName: DialogueUI, Assembly-CSharp
+        m_TargetAssemblyTypeName: _DialogueUI, Assembly-CSharp
         m_MethodName: SpawnChoiceDialogue
         m_Mode: 0
         m_Arguments:
@@ -7194,6 +7194,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  DialogueBox: {fileID: 2116231501}
 --- !u!114 &1122219860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7203,7 +7204,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1122219851}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccd4285bb4a797b7eb457efa1c87c6d9, type: 3}
+  m_Script: {fileID: 11500000, guid: 1698611ba1f88564c9f0dea11777d407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speaker: {fileID: 1974670259}
@@ -9287,7 +9288,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c01ff76d346b13a4f8ba94ad14a088de,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c01ff76d346b13a4f8ba94ad14a088de, type: 3}
@@ -9333,10 +9334,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1671951968}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 840be6172a1135b228536276c04543be, type: 3}
+  m_Script: {fileID: 11500000, guid: 970a629f97f54314d9e7a611623354ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactType: 1
+  interactType: 3
   dialogueGraph: {fileID: 11400000, guid: 1ba12feb0b8c12e499c03d2230093508, type: 2}
   onFirstInteract:
     m_PersistentCalls:
@@ -9345,7 +9346,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1671951973}
-        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_TargetAssemblyTypeName: _DialogueTrigger, Assembly-CSharp
         m_MethodName: EnableDialogue
         m_Mode: 0
         m_Arguments:
@@ -9619,7 +9620,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c01ff76d346b13a4f8ba94ad14a088de,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c01ff76d346b13a4f8ba94ad14a088de, type: 3}
@@ -12081,7 +12082,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5393215579111688472}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ae9d9fc03417e847aa62f94bb608722, type: 3}
   m_Name: 
@@ -12124,7 +12125,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5393215579111688472}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67fe2b5bcee625b45b4b10f35fd9ab82, type: 3}
   m_Name: 
@@ -12178,6 +12179,25 @@ MonoBehaviour:
   ButtonContainer: {fileID: 469029310}
   Player: {fileID: 5393215579111688472}
   buttonParent: {fileID: 469029311}
+--- !u!114 &5393215579111688486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5393215579111688472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0055a97a95459b749860166a50497c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearbyInteractables: []
+  onCanInteract:
+    m_PersistentCalls:
+      m_Calls: []
+  onInteractableLeave:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &7288094137546172433
 PrefabInstance:
   m_ObjectHideFlags: 0
