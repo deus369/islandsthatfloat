@@ -29,6 +29,8 @@ public class _NodeUpdater : MonoBehaviour
     private GameObject player;
     private GameObject interactable;
     public GameObject DialogueBox;
+    public GameObject[] RunOnce; 
+    public int r;
 
     void Awake()
     {
@@ -238,6 +240,7 @@ public class _NodeUpdater : MonoBehaviour
         }
         else if (nodeName == "testNode")
         {
+            RunOnce[r].GetComponent<BoxCollider>().enabled = false;
             print("test node");
             SetNodePort("exit");
         } 
