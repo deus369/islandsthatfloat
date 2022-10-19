@@ -29,8 +29,12 @@ public class _NodeUpdater : MonoBehaviour
     private GameObject player;
     private GameObject interactable;
     public GameObject DialogueBox;
-    public GameObject[] RunOnce; 
-    public int r;
+    public GameObject[] fragmentedProp; 
+    public ParticleSystem[] fogEffect; 
+    public int f; 
+
+    public GameObject[] normalProp;
+    public int p; 
 
     void Awake()
     {
@@ -240,7 +244,13 @@ public class _NodeUpdater : MonoBehaviour
         }
         else if (nodeName == "testNode")
         {
-            RunOnce[r].GetComponent<BoxCollider>().enabled = false;
+            fogEffect[f].Play();
+            fragmentedProp[p].GetComponent<BoxCollider>().enabled = false;
+            fragmentedProp[p].GetComponent<MeshCollider>().enabled = false;
+            fragmentedProp[p].GetComponent<MeshRenderer>().enabled = false;
+
+            normalProp[p].GetComponent<MeshCollider>().enabled = true;
+            normalProp[p].GetComponent<MeshRenderer>().enabled = true;
             print("test node");
             SetNodePort("exit");
         } 
