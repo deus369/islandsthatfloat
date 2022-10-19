@@ -8324,7 +8324,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: fc02c7cd1fe3b1b429d15a55663db37b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -23.99
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fc02c7cd1fe3b1b429d15a55663db37b,
         type: 3}
@@ -11164,6 +11164,7 @@ MonoBehaviour:
   - {fileID: 511003252}
   - {fileID: 1450403947}
   - {fileID: 153689120}
+  mouseUI: {fileID: 0}
   c: 0
   p: 0
 --- !u!114 &5393215579111688474
