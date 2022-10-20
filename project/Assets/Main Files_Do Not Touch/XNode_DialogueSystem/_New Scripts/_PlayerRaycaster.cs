@@ -67,7 +67,7 @@ public class _PlayerRaycaster : MonoBehaviour
                             {
                                 Debug.DrawRay(ray.origin, hit.point, Color.red, 2);
                                 UnityEngine.Debug.Log("Raycasted Interactable: " + hitTransform.gameObject.name);
-                                onRaycastThing.Invoke(dialogueTrigger.interactColor);
+                                //onRaycastThing.Invoke(dialogueTrigger.interactColor);
                             }
                         }
                     }

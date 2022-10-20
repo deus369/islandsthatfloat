@@ -13,7 +13,7 @@ public class _DialogueTrigger : MonoBehaviour
     public UnityEvent<GameObject> onFirstInteract;
     public UnityEvent<GameObject> onInteract;
     // public UnityEvent onInteractEnd;
-    public Color interactColor;
+    //public Color interactColor;
     private int interactionCount;
     public GameObject mouseUI;
     

@@ -23,7 +23,7 @@ public class _PlayerTriggerer : MonoBehaviour
             nearbyInteractables.Add(interactable);
             if (onCanInteract != null)
             {
-                onCanInteract.Invoke(dialogueTrigger.interactColor);
+                //onCanInteract.Invoke(dialogueTrigger.interactColor);
             }
         }
     }
