@@ -13,7 +13,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: check-in-machine-button
-    second: {fileID: 2100000, guid: e2fb52cba0441b6be9d0c0a98aef7403, type: 2}
+    second: {fileID: 2100000, guid: f0bb4168ddd3fe61588f121830a316b4, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
