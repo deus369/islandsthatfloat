@@ -35,6 +35,7 @@ public class _NodeUpdater : MonoBehaviour
 
     public GameObject[] normalProp;
     public int p; 
+    public _PlayerTriggerer playerTriggerer;
 
     void Awake()
     {
@@ -245,7 +246,8 @@ public class _NodeUpdater : MonoBehaviour
         else if (nodeName == "testNode")
         {
             fogEffect[f].Play();
-            //fragmentedProp[p].GetComponent<BoxCollider>().enabled = false;
+            playerTriggerer.RemoveInteractable(fragmentedProp[p]);
+            fragmentedProp[p].GetComponent<BoxCollider>().enabled = false;
             fragmentedProp[p].GetComponent<MeshCollider>().enabled = false;
             fragmentedProp[p].GetComponent<MeshRenderer>().enabled = false;
 
