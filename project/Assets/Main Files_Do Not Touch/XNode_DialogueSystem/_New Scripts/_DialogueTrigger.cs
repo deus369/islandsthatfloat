@@ -15,9 +15,11 @@ public class _DialogueTrigger : MonoBehaviour
     // public UnityEvent onInteractEnd;
     public Color interactColor;
     private int interactionCount;
+    public GameObject mouseUI;
     
     private void OnTriggerEnter(Collider collider)
     {
+        
         GameObject playerObject = collider.gameObject;
         if(playerObject.tag == "Player")
         {
@@ -25,6 +27,7 @@ public class _DialogueTrigger : MonoBehaviour
             //! Add this interactable to player nearby interactables.
             if (interactType == _InteractType.TriggerEnterClick)
             {
+                mouseUI.SetActive(true);
                 var playerTriggerer = playerObject.GetComponent<_PlayerTriggerer>();
                 if (playerTriggerer)
                 {
@@ -36,6 +39,7 @@ public class _DialogueTrigger : MonoBehaviour
     
     private void OnTriggerExit(Collider collider)
     {
+        mouseUI.SetActive(false);
         GameObject playerObject = collider.gameObject;
         if(playerObject.tag == "Player")
         {

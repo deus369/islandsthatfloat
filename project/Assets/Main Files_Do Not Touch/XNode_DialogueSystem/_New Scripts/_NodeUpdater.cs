@@ -245,7 +245,7 @@ public class _NodeUpdater : MonoBehaviour
         else if (nodeName == "testNode")
         {
             fogEffect[f].Play();
-            fragmentedProp[p].GetComponent<BoxCollider>().enabled = false;
+            //fragmentedProp[p].GetComponent<BoxCollider>().enabled = false;
             fragmentedProp[p].GetComponent<MeshCollider>().enabled = false;
             fragmentedProp[p].GetComponent<MeshRenderer>().enabled = false;
 

@@ -13,6 +13,7 @@ public class _PlayerTriggerer : MonoBehaviour
     private bool hasTriggered;  // wait until player leaves before they can re trigger
     public UnityEvent<Color> onCanInteract;
     public UnityEvent onInteractableLeave;
+    //public _DialogueTrigger dialogueTrigger;
 
     public void AddInteractable(GameObject interactable, in _DialogueTrigger dialogueTrigger)
     {
@@ -49,11 +50,13 @@ public class _PlayerTriggerer : MonoBehaviour
         }
         if (nearbyInteractables.Count > 0 && Input.GetMouseButtonDown(0)) //wait for left click 
         {
+            //_DialogueTrigger.mouseUI.SetActive(false);
             var interactTarget = nearbyInteractables[0];
             if (interactTarget && interactTarget.GetComponent<_DialogueTrigger>())
             {
                 hasTriggered = true;
                 interactTarget.GetComponent<_DialogueTrigger>().TriggerFromTriggerer(gameObject);
+                interactTarget.GetComponent<_DialogueTrigger>().mouseUI.SetActive(false);
             }
         }
     }
