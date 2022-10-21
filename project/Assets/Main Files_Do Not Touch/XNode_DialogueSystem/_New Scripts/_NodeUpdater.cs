@@ -34,6 +34,8 @@ public class _NodeUpdater : MonoBehaviour
     public int f; 
 
     public GameObject[] normalProp;
+    public GameObject[] NPC; 
+    public int n;
     public int p; 
     public _PlayerTriggerer playerTriggerer;
     private _DialogueTrigger dialogueTrigger; 
@@ -281,6 +283,7 @@ public class _NodeUpdater : MonoBehaviour
         } 
         else if (nodeName == "HideCollider"){
             normalProp[p].GetComponent<BoxCollider>().enabled = false;
+            NPC[n].GetComponent<BoxCollider>().enabled = false;
             SetNodePort("exit");
 
         }

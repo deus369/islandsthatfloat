@@ -13,6 +13,11 @@ public class _PlayerRaycaster : MonoBehaviour
     public UnityEvent onRaycastNothing;
     public UnityEvent onTriggeredThing;
     private GameObject targetInteractable;
+    public GameObject mouseUI;
+    public _NodeUpdater nodeUpdater;
+    public int particleNumber;
+    public int propNumber;
+    public int npcNumber; 
 
     void Update()
     {
@@ -25,6 +30,7 @@ public class _PlayerRaycaster : MonoBehaviour
             var mouseButtonDown = Input.GetMouseButtonDown(0);
             if (mouseButtonDown)
             {
+                mouseUI.SetActive(false);
                 var dialogueTrigger = targetInteractable.GetComponent<_DialogueTrigger>();
                 if (dialogueTrigger)
                 {
@@ -49,6 +55,10 @@ public class _PlayerRaycaster : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, maxRaycast))
         {
+            nodeUpdater.p = propNumber; 
+            nodeUpdater.f = particleNumber; 
+            nodeUpdater.n = npcNumber;
+            mouseUI.SetActive(true);
             var hitTransform = hit.transform;
             if (hitTransform)
             {
@@ -83,6 +93,7 @@ public class _PlayerRaycaster : MonoBehaviour
 
     void OnRaycastNothing()
     {
+         mouseUI.SetActive(false);
         if (isRaycastingThing)
         {
             isRaycastingThing = false;
