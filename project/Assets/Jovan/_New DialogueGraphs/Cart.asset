@@ -45,7 +45,7 @@ MonoBehaviour:
       _dynamic: 0
   speakerName: YOU
   dialogueLine: My toy wagon used to be where all my toys were stored when I was
-    changing rooms. Too bad it went kaput.
+    changing rooms. Too bad it broke.
 --- !u!114 &-2417657147797042821
 MonoBehaviour:
   m_ObjectHideFlags: 0
