@@ -14,10 +14,10 @@ public class _PlayerRaycaster : MonoBehaviour
     public UnityEvent onTriggeredThing;
     private GameObject targetInteractable;
     public GameObject mouseUI;
+    public GameObjectIndex[] gameObjectIndex;
     public _NodeUpdater nodeUpdater;
-    public int particleNumber;
-    public int propNumber;
-    public int npcNumber; 
+    
+    
 
     void Update()
     {
@@ -55,9 +55,14 @@ public class _PlayerRaycaster : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, maxRaycast))
         {
-            nodeUpdater.p = propNumber; 
-            nodeUpdater.f = particleNumber; 
-            nodeUpdater.n = npcNumber;
+            /* for(int i = 0; i < gameObjectIndex.Length; i++){
+                gameObjectIndex[i].propNumber = nodeUpdater.p; 
+                gameObjectIndex[i].particleNumber = nodeUpdater.f; 
+                gameObjectIndex[i].npcNumber = nodeUpdater.n;
+            } */
+            
+            
+            
             mouseUI.SetActive(true);
             var hitTransform = hit.transform;
             if (hitTransform)
@@ -68,6 +73,16 @@ public class _PlayerRaycaster : MonoBehaviour
                     var canTrigger = dialogueTrigger.CanTrigger(_InteractType.Raycast);
                     if (canTrigger)
                     {
+                        for(int i = 0; i < gameObjectIndex.Length; i++){
+                            /* hitTransform.GetComponent<GameObjectIndex>().propNumber = nodeUpdater.p;
+                            hitTransform.GetComponent<GameObjectIndex>().particleNumber = nodeUpdater.f; 
+                            hitTransform.GetComponent<GameObjectIndex>().npcNumber = nodeUpdater.n;  */
+                            /* gameObjectIndex[i].propNumber = nodeUpdater.p; 
+                            gameObjectIndex[i].particleNumber = nodeUpdater.f; 
+                            gameObjectIndex[i].npcNumber = nodeUpdater.n; */
+                           
+                            print("for loop");
+                        }
                         didRaycastThing = true;
                         if (!isRaycastingThing)
                         {
@@ -93,7 +108,7 @@ public class _PlayerRaycaster : MonoBehaviour
 
     void OnRaycastNothing()
     {
-         mouseUI.SetActive(false);
+        mouseUI.SetActive(false);
         if (isRaycastingThing)
         {
             isRaycastingThing = false;
