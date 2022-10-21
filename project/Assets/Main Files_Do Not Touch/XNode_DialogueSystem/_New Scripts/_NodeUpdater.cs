@@ -36,6 +36,7 @@ public class _NodeUpdater : MonoBehaviour
     public GameObject[] normalProp;
     public int p; 
     public _PlayerTriggerer playerTriggerer;
+    private _DialogueTrigger dialogueTrigger; 
 
     void Awake()
     {
@@ -48,19 +49,25 @@ public class _NodeUpdater : MonoBehaviour
     }
 
     //! Starts the dialogue system
-    public void Begin(GameObject player, GameObject interactable, DialogueGraph dialogueGraph)
+    public void Begin(GameObject player, GameObject interactable, DialogueGraph dialogueGraph, _DialogueTrigger dialogueTrigger)
     {
         this.player = player;
         this.interactable = interactable;
         this.dialogueGraph = dialogueGraph;
+        this.dialogueTrigger = dialogueTrigger; 
         if (onStartDialogue != null)
         {
             onStartDialogue.Invoke();
         }
         SetNode("Start");
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
-        player.GetComponent<FirstPersonController>().enabled = false;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        if(dialogueTrigger.OnTriggerDisablePlayerMove == true){
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            player.GetComponent<FirstPersonController>().enabled = false;
+        }
+        
     }
 
     //! Ends the dialogue tree
@@ -218,6 +225,8 @@ public class _NodeUpdater : MonoBehaviour
         }
         else if (nodeName == "FadeDialogueNode")
         { 
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
             if (onSetNode != null)
             {
                 onSetNode.Invoke(dataParts[1], dataParts[2]);
@@ -226,6 +235,7 @@ public class _NodeUpdater : MonoBehaviour
             yield return new WaitForSeconds(4);
             animFadeOut.SetBool("FadeOut", true);
             yield return new WaitForSeconds(1);
+            normalProp[p].GetComponent<BoxCollider>().enabled = false;
             SetNodePort("exit");
         }
         else if (nodeName == "HaltPassiveDialogueNode")
