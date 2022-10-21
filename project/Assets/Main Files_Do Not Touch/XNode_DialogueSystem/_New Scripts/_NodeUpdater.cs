@@ -253,6 +253,9 @@ public class _NodeUpdater : MonoBehaviour
         }
         else if (nodeName == "AnimationNode")
         {
+            fogEffect[f].Play();
+            fragmentedProp[p].SetActive(false);
+            normalProp[p].SetActive(true);
             SetNodePort("exit");
         }
         else if (nodeName == "PropInteraction")
@@ -285,8 +288,10 @@ public class _NodeUpdater : MonoBehaviour
             normalProp[p].GetComponent<BoxCollider>().enabled = false;
             NPC[n].GetComponent<BoxCollider>().enabled = false;
             SetNodePort("exit");
-
         }
+
+
+
         
     }
 }
