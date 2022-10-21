@@ -9,6 +9,7 @@ using StarterAssets;
 public class _DialogueTrigger : MonoBehaviour
 {
     public _InteractType interactType;
+    public _DialogueTrigger dialogueTrigger;
     public DialogueGraph dialogueGraph;
     public UnityEvent<GameObject> onFirstInteract;
     public UnityEvent<GameObject> onInteract;
@@ -16,6 +17,7 @@ public class _DialogueTrigger : MonoBehaviour
     //public Color interactColor;
     private int interactionCount;
     public GameObject mouseUI;
+    public bool OnTriggerDisablePlayerMove;
     
     private void OnTriggerEnter(Collider collider)
     {
@@ -27,6 +29,7 @@ public class _DialogueTrigger : MonoBehaviour
             //! Add this interactable to player nearby interactables.
             if (interactType == _InteractType.TriggerEnterClick)
             {
+                OnTriggerDisablePlayerMove = true;
                 mouseUI.SetActive(true);
                 var playerTriggerer = playerObject.GetComponent<_PlayerTriggerer>();
                 if (playerTriggerer)
@@ -46,6 +49,7 @@ public class _DialogueTrigger : MonoBehaviour
             //! Remove this interactable to player nearby interactables.
             if (interactType == _InteractType.TriggerEnterClick)
             {
+                
                 var playerTriggerer = playerObject.GetComponent<_PlayerTriggerer>();
                 if (playerTriggerer)
                 {
@@ -93,6 +97,7 @@ public class _DialogueTrigger : MonoBehaviour
 
     public void EnableDialogue(GameObject playerObject)
     {
-        _NodeUpdater.instance.Begin(playerObject, gameObject, dialogueGraph);
+        
+        _NodeUpdater.instance.Begin(playerObject, gameObject, dialogueGraph, dialogueTrigger);
     }
 }
