@@ -50,9 +50,6 @@ public class NodeUpdater : MonoBehaviour
             onStartDialogue.Invoke();
         }
         SetNode("Start");
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
-        player.GetComponent<FirstPersonController>().enabled = false;
     }
 
     //! Ends the dialogue tree
@@ -62,9 +59,14 @@ public class NodeUpdater : MonoBehaviour
         {
             onEndDialogue.Invoke();
         }
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        player.GetComponent<FirstPersonController>().enabled = true;
+        if (interactable)
+        {
+            var dialogueTrigger = interactable.GetComponent<DialogueTrigger>();
+            if (dialogueTrigger)
+            {
+                dialogueTrigger.OnDialogueEnded(player);
+            }
+        }
         player = null;
     }
 
@@ -119,8 +121,15 @@ public class NodeUpdater : MonoBehaviour
         }
         if (targetNodePort != null)
         {
-            dialogueGraph.current = targetNodePort.Connection.node as BaseNode;
-            dialogueRoutine = StartCoroutine(ParseNode());    
+            if (targetNodePort.Connection != null)
+            {
+                dialogueGraph.current = targetNodePort.Connection.node as BaseNode;
+                dialogueRoutine = StartCoroutine(ParseNode());    
+            }
+            else
+            {
+                Debug.LogError("Node was not attached to a connection node.");
+            }
         }
         else
         {

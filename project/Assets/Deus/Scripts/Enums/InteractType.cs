@@ -3,5 +3,6 @@ public enum InteractType
     Any,
     TriggerCollider,
     Raycast,
-    TriggerEnterClick
+    TriggerEnterClick,
+    TriggerEnterPassive
 }

@@ -8,6 +8,8 @@ using TMPro;
 */
 public class DialogueUI : MonoBehaviour
 {
+    public static DialogueUI instance;
+
     [Header("UI Scene")]
     public TextMeshProUGUI speaker;
     public TextMeshProUGUI dialogue; 
@@ -21,6 +23,7 @@ public class DialogueUI : MonoBehaviour
 
     void Awake()
     {
+        instance = this;
         Hide();
     }
 
