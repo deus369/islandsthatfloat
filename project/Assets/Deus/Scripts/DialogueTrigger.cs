@@ -8,13 +8,31 @@ using StarterAssets;
 */
 public class DialogueTrigger : MonoBehaviour
 {
+    [Header("Data")]
     public InteractType interactType;
+    public Color interactColor;
     public DialogueGraph dialogueGraph;
+    [Header("Events")]
     public UnityEvent<GameObject> onFirstInteract;
     public UnityEvent<GameObject> onInteract;
-    // public UnityEvent onInteractEnd;
-    public Color interactColor;
+    public UnityEvent onInteractEnd;
     private int interactionCount;
+    [Header("Disable Movement")]
+    public bool isDisablePlayerMovement = true;
+    [Header("Auto Play")]
+    public bool isAutoPlayDialogue;
+    public float textNodeSpeed = 1.4f;
+    private bool isPlayingDialogue;
+    private float lastHitNext;
+
+    void Update()
+    {
+        if (isPlayingDialogue && Time.time - lastHitNext >= textNodeSpeed)
+        {
+            lastHitNext = Time.time;
+            DialogueUI.instance.NextNode();
+        }
+    }
     
     private void OnTriggerEnter(Collider collider)
     {
@@ -23,7 +41,11 @@ public class DialogueTrigger : MonoBehaviour
         {
             Trigger(playerObject, InteractType.TriggerCollider);
             //! Add this interactable to player nearby interactables.
-            if (interactType == InteractType.TriggerEnterClick)
+            if (interactType == InteractType.TriggerEnterPassive)
+            {
+                TriggerFromTriggerer(playerObject);
+            }
+            else if (interactType == InteractType.TriggerEnterClick)
             {
                 var playerTriggerer = playerObject.GetComponent<PlayerTriggerer>();
                 if (playerTriggerer)
@@ -85,10 +107,40 @@ public class DialogueTrigger : MonoBehaviour
         {
             onInteract.Invoke(triggerer);
         }
+        if (isAutoPlayDialogue)
+        {
+            isPlayingDialogue = true;
+            lastHitNext = Time.time;
+        }
     }
 
     public void EnableDialogue(GameObject playerObject)
     {
+        if (isDisablePlayerMovement)
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            playerObject.GetComponent<FirstPersonController>().enabled = false;
+        }
         NodeUpdater.instance.Begin(playerObject, gameObject, dialogueGraph);
+    }
+
+    public void OnDialogueEnded(GameObject playerObject)
+    {
+        if (isAutoPlayDialogue)
+        {
+            isPlayingDialogue = false;
+        }
+        //! If was disabled, reenable player movement
+        if (isDisablePlayerMovement)
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            playerObject.GetComponent<FirstPersonController>().enabled = true;
+        }
+        if (onInteractEnd != null)
+        {
+            onInteractEnd.Invoke();
+        }
     }
 }
