@@ -2876,6 +2876,7 @@ GameObject:
   - component: {fileID: 915797123}
   - component: {fileID: 915797117}
   - component: {fileID: 915797124}
+  - component: {fileID: 915797125}
   m_Layer: 0
   m_Name: Mysterious Figure
   m_TagString: NPC
@@ -3042,6 +3043,21 @@ MonoBehaviour:
         m_CallState: 2
   mouseUI: {fileID: 1578918738}
   OnTriggerDisablePlayerMove: 1
+--- !u!114 &915797125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915797113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 667d403c37cc80d4e9aaaebd4ba5736d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeUpdater: {fileID: 1000770169}
+  particleNumber: 0
+  propNumber: 0
 --- !u!1001 &961245714
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3425,9 +3441,7 @@ MonoBehaviour:
   fogEffect: []
   f: 0
   normalProp:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 915797113}
   p: 0
   playerTriggerer: {fileID: 60698079}
 --- !u!114 &1000770170

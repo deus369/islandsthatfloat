@@ -253,6 +253,19 @@ public class _NodeUpdater : MonoBehaviour
         {
             SetNodePort("exit");
         }
+        else if (nodeName == "PropInteraction")
+        {
+            fogEffect[f].Play();
+            playerTriggerer.RemoveInteractable(fragmentedProp[p]);
+            fragmentedProp[p].GetComponent<BoxCollider>().enabled = false;
+            fragmentedProp[p].GetComponent<MeshCollider>().enabled = false;
+            fragmentedProp[p].GetComponent<MeshRenderer>().enabled = false;
+
+            normalProp[p].GetComponent<MeshCollider>().enabled = true;
+            normalProp[p].GetComponent<MeshRenderer>().enabled = true;
+            //print("test node");
+            SetNodePort("exit");
+        } 
         else if (nodeName == "testNode")
         {
             fogEffect[f].Play();
@@ -266,5 +279,11 @@ public class _NodeUpdater : MonoBehaviour
             print("test node");
             SetNodePort("exit");
         } 
+        else if (nodeName == "HideCollider"){
+            normalProp[p].GetComponent<BoxCollider>().enabled = false;
+            SetNodePort("exit");
+
+        }
+        
     }
 }
