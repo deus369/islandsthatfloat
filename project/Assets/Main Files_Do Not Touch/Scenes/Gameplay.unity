@@ -2488,7 +2488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactType: 3
   dialogueTrigger: {fileID: 451120719}
-  dialogueGraph: {fileID: 11400000, guid: 4300223a4940a5544938033c118789ec, type: 2}
+  dialogueGraph: {fileID: 11400000, guid: 5b32e463a9281554b816a97f7fe5c7a9, type: 2}
   onFirstInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -5042,17 +5042,17 @@ PrefabInstance:
     - target: {fileID: 2669975396813482066, guid: ad9fdf31b60396f4c8351fd6ed6276b1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.506759
+      value: 0.51
       objectReference: {fileID: 0}
     - target: {fileID: 2669975396813482066, guid: ad9fdf31b60396f4c8351fd6ed6276b1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: -0.513
       objectReference: {fileID: 0}
     - target: {fileID: 2669975396813482066, guid: ad9fdf31b60396f4c8351fd6ed6276b1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.443902
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 2669975396813482066, guid: ad9fdf31b60396f4c8351fd6ed6276b1,
         type: 3}
@@ -9066,8 +9066,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.6131709, y: 0.75696707, z: 5.8648567}
-  m_Center: {x: -0.298991, y: -1.0425155, z: -0.7984176}
+  m_Size: {x: 1.1752778, y: 0.75696707, z: 2.9380105}
+  m_Center: {x: -0.35790825, y: -1.0425155, z: 0.6633545}
 --- !u!114 &1292032742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9082,7 +9082,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactType: 1
   dialogueTrigger: {fileID: 1292032742}
-  dialogueGraph: {fileID: 11400000, guid: 4300223a4940a5544938033c118789ec, type: 2}
+  dialogueGraph: {fileID: 11400000, guid: 73cf8b921bf4e664f8278406825344f7, type: 2}
   onFirstInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -9102,7 +9102,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   mouseUI: {fileID: 1578918738}
-  OnTriggerDisablePlayerMove: 0
+  OnTriggerDisablePlayerMove: 1
 --- !u!1001 &1294727380
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9454,7 +9454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactType: 3
   dialogueTrigger: {fileID: 1312976949}
-  dialogueGraph: {fileID: 11400000, guid: 4300223a4940a5544938033c118789ec, type: 2}
+  dialogueGraph: {fileID: 11400000, guid: e8baad31c0ec3d44ab184d06b21aa717, type: 2}
   onFirstInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -13197,7 +13197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactType: 3
   dialogueTrigger: {fileID: 1947032442}
-  dialogueGraph: {fileID: 11400000, guid: 4300223a4940a5544938033c118789ec, type: 2}
+  dialogueGraph: {fileID: 11400000, guid: acf8ee742c3e144459aa5afd809911c3, type: 2}
   onFirstInteract:
     m_PersistentCalls:
       m_Calls: []
