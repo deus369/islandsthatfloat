@@ -36,14 +36,14 @@ public class Package : MonoBehaviour
                 Destroy(gameObject);
                 return;
             }
-            startPosition = transform.position;
+            startPosition = transform.position - offset;
             targetWaypoint = wayPoints[wayPointIndex];
             timeTaking = targetWaypoint.GetComponent<WayPoint>().GetTiming();
             return;
         }
-        transform.position = Vector3.Lerp(
+        transform.position = offset + Vector3.Lerp(
             startPosition,
             targetWaypoint.transform.position,
-            timePassed / timeTaking) + offset;
+            timePassed / timeTaking);
     }
 }
