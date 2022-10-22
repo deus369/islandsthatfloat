@@ -8,13 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Manthan/Scenes/MainMenu.unity
     guid: 007673a39fa2cc3488f8c1bc6ab5506e
-  - enabled: 0
+  - enabled: 1
     path: Assets/Main Files_Do Not Touch/Scenes/Intro Scene.unity
     guid: 00319bedcd0f30c49b266463d3403b9e
-  - enabled: 0
+  - enabled: 1
     path: Assets/Main Files_Do Not Touch/Scenes/Gameplay.unity
     guid: 754cf681c6b21e644b5c5f24c8ddad11
-  - enabled: 1
+  - enabled: 0
     path: Assets/Manthan/Scenes/Gameplay 1.unity
     guid: 1302aacf366639a44a562441ac9d4481
   - enabled: 1
