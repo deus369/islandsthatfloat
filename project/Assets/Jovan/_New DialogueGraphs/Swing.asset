@@ -1,48 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-6977452985376060148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1773cec8c308a134d8d76a5be5b6fe37, type: 3}
-  m_Name: Animation
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 440, y: -104}
-  ports:
-    keys:
-    - entry
-    - exit
-    values:
-    - _fieldName: entry
-      _node: {fileID: -6977452985376060148}
-      _typeQualifiedName: Connection, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections:
-      - fieldName: exit
-        node: {fileID: -6834349349101517058}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: exit
-      _node: {fileID: -6977452985376060148}
-      _typeQualifiedName: Connection, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections:
-      - fieldName: entry
-        node: {fileID: 7074395268130795414}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
 --- !u!114 &-6834349349101517058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,7 +37,7 @@ MonoBehaviour:
         PublicKeyToken=null
       connections:
       - fieldName: entry
-        node: {fileID: -6977452985376060148}
+        node: {fileID: 7074395268130795414}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -105,7 +62,6 @@ MonoBehaviour:
   - {fileID: 5398391079699420998}
   - {fileID: 7074395268130795414}
   - {fileID: -6834349349101517058}
-  - {fileID: -6977452985376060148}
   start: {fileID: 5398391079699420998}
   current: {fileID: 7074395268130795414}
   initNode: {fileID: 5398391079699420998}
@@ -163,7 +119,7 @@ MonoBehaviour:
         PublicKeyToken=null
       connections:
       - fieldName: exit
-        node: {fileID: -6977452985376060148}
+        node: {fileID: -6834349349101517058}
         reroutePoints: []
       _direction: 0
       _connectionType: 0

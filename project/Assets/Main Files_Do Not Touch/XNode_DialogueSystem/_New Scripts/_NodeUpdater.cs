@@ -193,6 +193,8 @@ public class _NodeUpdater : MonoBehaviour
         }
         else if (nodeName == "ChoiceDialogueNode")
         {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             if (onSetNode != null)
             {
                 onSetNode.Invoke(dataParts[1], dataParts[2]);
@@ -201,6 +203,8 @@ public class _NodeUpdater : MonoBehaviour
         }
         else if (nodeName == "DialogueNode")
         {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             if (onSetNode != null)
             {
                 onSetNode.Invoke(dataParts[1], dataParts[2]);
