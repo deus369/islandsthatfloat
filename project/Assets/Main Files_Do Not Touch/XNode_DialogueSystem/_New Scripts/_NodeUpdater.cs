@@ -272,6 +272,7 @@ public class _NodeUpdater : MonoBehaviour
 
             normalProp[p].GetComponent<MeshCollider>().enabled = true;
             normalProp[p].GetComponent<MeshRenderer>().enabled = true;
+            normalProp[p].SetActive(true);
             //print("test node");
             SetNodePort("exit");
         } 
