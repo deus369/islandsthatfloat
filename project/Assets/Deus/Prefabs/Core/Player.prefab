@@ -170,9 +170,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55919ac34a26952479f3fc91f777b2fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  graphicsObject: {fileID: 0}
-  MoveSpeed: 2
-  SprintSpeed: 8
+  graphicsObject: {fileID: 763185546954822924}
+  MoveSpeed: 1.8
+  SprintSpeed: 1.8
   RotationSpeed: 1
   SpeedChangeRate: 10
   JumpHeight: 0
