@@ -18,10 +18,17 @@ public class NextLeveler : MonoBehaviour
     {
         if (nextSceneName == "")
         {
-            Debug.LogError("Next Scene Name not set. Using SceneIndex + 1.");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            var nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+            if (nextSceneIndex >= SceneManager.sceneCountInBuildSettings)
+            {
+                Debug.Log("NextLeveler.OnTriggered: Loading Next Scene: " + nextSceneIndex + " / " + SceneManager.sceneCountInBuildSettings);
+                nextSceneIndex = 0;
+            }
+            Debug.Log("NextLeveler.OnTriggered: Loading Next Scene: " + nextSceneIndex);
+            SceneManager.LoadScene(nextSceneIndex);
             return;
         }
+        Debug.Log("Loading Next Scene: " + nextSceneName);
         SceneManager.LoadScene(nextSceneName);
     }
 
