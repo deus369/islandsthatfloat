@@ -6,6 +6,7 @@ public class Package : MonoBehaviour
 {
     [HideInInspector]
     public List<GameObject> wayPoints;
+    public Vector3 offset;
     private GameObject targetWaypoint;
     private Vector3 startPosition;
     private float lastTime;
@@ -16,7 +17,7 @@ public class Package : MonoBehaviour
     {
         lastTime = Time.time;
         startPosition = wayPoints[0].transform.position;
-        transform.position = startPosition;
+        transform.position = startPosition + offset;
         wayPointIndex = 1;
         targetWaypoint = wayPoints[wayPointIndex];
         timeTaking = targetWaypoint.GetComponent<WayPoint>().GetTiming();
@@ -30,7 +31,7 @@ public class Package : MonoBehaviour
         {
             lastTime = Time.time;
             wayPointIndex++;
-            if (wayPointIndex > wayPoints.Count)
+            if (wayPointIndex >= wayPoints.Count)
             {
                 Destroy(gameObject);
                 return;
@@ -43,6 +44,6 @@ public class Package : MonoBehaviour
         transform.position = Vector3.Lerp(
             startPosition,
             targetWaypoint.transform.position,
-            timePassed / timeTaking);
+            timePassed / timeTaking) + offset;
     }
 }

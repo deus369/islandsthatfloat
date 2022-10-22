@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 270361555859409963}
   - component: {fileID: 270361555859409962}
   - component: {fileID: 270361555859409957}
-  - component: {fileID: 270361555859409956}
   m_Layer: 0
   m_Name: assembler-stand
   m_TagString: Untagged
@@ -28,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 270361555859409959}
   m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.7071079}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.821397, y: 0.87094235, z: 1.6631801}
+  m_LocalScale: {x: 0.5116827, y: 0.87094235, z: 1.2531648}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8198638119190549906}
@@ -62,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 14a4769a4a0fb5430a8c8f417996ac68, type: 2}
+  - {fileID: 2100000, guid: 1af001c33a0d30539b7605807592d009, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -84,19 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &270361555859409956
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 270361555859409959}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &360602327497523509
 GameObject:
   m_ObjectHideFlags: 0

@@ -203,6 +203,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8255230561923927939, guid: ad06367c15842d81e9f57c83055dec3d,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.70250803
+      objectReference: {fileID: 0}
+    - target: {fileID: 8255230561923927939, guid: ad06367c15842d81e9f57c83055dec3d,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4.2828937
+      objectReference: {fileID: 0}
+    - target: {fileID: 8255230561923927949, guid: ad06367c15842d81e9f57c83055dec3d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1af001c33a0d30539b7605807592d009, type: 2}
     - target: {fileID: 8411922367783638640, guid: ad06367c15842d81e9f57c83055dec3d,
         type: 3}
       propertyPath: m_IsActive
@@ -213,7 +228,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: assembler-line-plus-lights
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8255230561923927948, guid: ad06367c15842d81e9f57c83055dec3d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ad06367c15842d81e9f57c83055dec3d, type: 3}
 --- !u!1 &527315065318392550 stripped
 GameObject:
