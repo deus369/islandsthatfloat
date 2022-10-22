@@ -95,7 +95,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.6
-  m_Height: 2
+  m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4024938135645110554
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   graphicsObject: {fileID: 0}
   MoveSpeed: 2
-  SprintSpeed: 2
+  SprintSpeed: 8
   RotationSpeed: 1
   SpeedChangeRate: 10
   JumpHeight: 0
