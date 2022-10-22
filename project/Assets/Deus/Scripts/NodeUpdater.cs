@@ -203,6 +203,7 @@ public class NodeUpdater : MonoBehaviour
         }
         else if (nodeName == "CloseDialogue_ExitNode_NoLoop_toStart")
         {
+            Application.Quit();
             End();
         }
         else if (nodeName == "CustomNode")
@@ -238,7 +239,8 @@ public class NodeUpdater : MonoBehaviour
         }
         else if (nodeName == "testNode")
         {
-            print("test node");
+            
+            //rint("test node");
             SetNodePort("exit");
         } 
     }
