@@ -17,7 +17,7 @@ MonoBehaviour:
   - {fileID: 7074395268130795414}
   - {fileID: 724983561780985627}
   start: {fileID: 5398391079699420998}
-  current: {fileID: 5398391079699420998}
+  current: {fileID: 7074395268130795414}
   initNode: {fileID: 5398391079699420998}
 --- !u!114 &724983561780985627
 MonoBehaviour:
@@ -32,7 +32,7 @@ MonoBehaviour:
   m_Name: Fade Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 216, y: -40}
+  position: {x: 232, y: -56}
   ports:
     keys:
     - input
