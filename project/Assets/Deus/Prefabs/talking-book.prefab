@@ -307,7 +307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactType: 2
   interactColor: {r: 0.90588236, g: 0.4820011, b: 0.09803922, a: 0.89411765}
-  dialogueGraph: {fileID: 11400000, guid: 86fe91d1529946b45b0faf2409d87c03, type: 2}
+  dialogueGraph: {fileID: 11400000, guid: 5b24aeff0d6181e478b76ee51dc7bcf9, type: 2}
   onFirstInteract:
     m_PersistentCalls:
       m_Calls: []
