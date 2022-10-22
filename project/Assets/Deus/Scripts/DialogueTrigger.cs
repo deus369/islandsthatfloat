@@ -12,6 +12,7 @@ public class DialogueTrigger : MonoBehaviour
     public InteractType interactType;
     public Color interactColor;
     public DialogueGraph dialogueGraph;
+    public bool playDialogueOnInteract;
     [Header("Events")]
     public UnityEvent<GameObject> onFirstInteract;
     public UnityEvent<GameObject> onInteract;
@@ -106,6 +107,10 @@ public class DialogueTrigger : MonoBehaviour
         if (onInteract != null)
         {
             onInteract.Invoke(triggerer);
+        }
+        if (playDialogueOnInteract)
+        {
+            EnableDialogue(triggerer);
         }
         if (isAutoPlayDialogue)
         {
